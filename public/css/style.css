@@ -1,0 +1,33 @@
+html {
+    position: relative !important;
+    min-height: 100% !important;
+}
+
+.btn-delete {
+    padding: 0;
+    margin: 0 0 0 50px;
+    display: inline-block;
+    color: #ae5b5c;
+}
+
+#game-show {
+    margin-bottom: 20px;
+}
+
+#like {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+}
+
+textarea#description {
+    height: 300px;
+}
+
+.tag {
+    cursor: pointer;
+}
+
+.index-tag {
+ margin-bottom: 5px;
+}
