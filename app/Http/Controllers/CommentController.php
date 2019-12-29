@@ -11,24 +11,11 @@ use Illuminate\Support\Facades\Auth;
 class CommentController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return void
+     * CommentController constructor.
      */
-    public function index()
+    public function __construct()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @param Request $request
-     * @return void
-     */
-    public function create(Request $request)
-    {
-//
+        $this->middleware('auth');
     }
 
     /**
@@ -53,28 +40,6 @@ class CommentController extends Controller
         $comment->save();
 
         return redirect()->route('games.show', $request->game_id);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param Comment $comment
-     * @return void
-     */
-    public function show(Comment $comment)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Comment $comment
-     * @return void
-     */
-    public function edit(Comment $comment)
-    {
-        //
     }
 
     /**

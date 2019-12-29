@@ -13,7 +13,7 @@
 - [x] Liens de suppression et d'edition d'un jeu
 - [ ] Liens de suppression et d'edition d'un tag
 - [x] Liens de suppression et d'edition d'un commentaire
-- [ ] Sécurité des routes si l'user est auth ou si c'est un invité  
-- [ ] Nettoyage des routes (suppression des routes inutiles)
+- [x] Sécurité des routes si l'user est auth ou si c'est un invité  
+- [x] Nettoyage des routes (suppression des routes inutiles)
 - [ ] Upload d'images pour un jeu
 - [x] Utiliser les controlleurs Like & Dislike pour nettoyer le controller Game et faire les choses proprement (+ routes)

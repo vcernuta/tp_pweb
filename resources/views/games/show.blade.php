@@ -107,7 +107,7 @@
                         <div class="card" id="game-show">
                             <div class="card-header">
                                 {{ $c->title }}
-                                @if(Auth::check() && (Auth::user()->id_admin == 1 || Auth::user()->name == $c->author))
+                                @if(Auth::check() && (Auth::user()->is_admin == 1 || Auth::user()->name == $c->author))
                                     <form action="{{route('comments.destroy', $c->id)}}" method="POST" class="d-inline-block">
                                         @csrf
                                         @method('DELETE')

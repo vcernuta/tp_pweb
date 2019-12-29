@@ -4,73 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class TagController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return void
+     * TagController constructor.
      */
-    public function index()
+    public function __construct()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return void
-     */
-    public function create()
-    {
-        //
+        $this->middleware('auth');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return void
+     * @return RedirectResponse
+     * @throws ValidationException
      */
     public function store(Request $request)
     {
-        //
-    }
+        $this->validate($request, [
+           'tag' => 'required'
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param Tag $tag
-     * @return void
-     */
-    public function show(Tag $tag)
-    {
-        //
-    }
+        $tag = new Tag();
+        $tag->label = $request->tag;
+        $tag->save();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Tag $tag
-     * @return void
-     */
-    public function edit(Tag $tag)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param Tag $tag
-     * @return void
-     */
-    public function update(Request $request, Tag $tag)
-    {
-        //
+        return redirect()->route('home');
     }
 
     /**
@@ -84,6 +49,6 @@ class TagController extends Controller
         $tag = Tag::findOrFail($id);
         $tag->delete();
 
-        return response()->json('tag delete');
+        return redirect()->route('home');
     }
 }
