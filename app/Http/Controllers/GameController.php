@@ -66,6 +66,7 @@ class GameController extends Controller
             'min_max_player' => 'required',
             'min_max_duration' => 'required',
             'description' => 'required',
+            'image' => 'required'
         ]);
 
         $tags = $request->tags;
@@ -86,6 +87,11 @@ class GameController extends Controller
         $game->min_max_player = $request->min_max_player;
         $game->min_max_duration = $request->min_max_duration;
         $game->description = $request->description;
+        $game->save();
+
+        $filename = $game->id . "_" . time() . "." . $request->image->getClientOriginalExtension();
+        $request->image->storeAs('images/games/' . $game->id, $filename, ['disk' => 'public']);
+        $game->image = $filename;
         $game->save();
 
         foreach ($listTags as $t) {

@@ -21,6 +21,7 @@ class CreateTableGames extends Migration
             $table->string('min_max_player')->nullable(false);
             $table->string('min_max_duration')->nullable(false);
             $table->longText('description')->nullable(false);
+            $table->longText('image')->nullable(false);
             $table->timestamps();
 
             $table->softDeletes();

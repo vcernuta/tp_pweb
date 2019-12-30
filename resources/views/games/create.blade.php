@@ -15,7 +15,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('games.store') }}" method="post" id="create-game-post">
+                <form action="{{ route('games.store') }}" method="post" id="create-game-post" enctype="multipart/form-data">
                     <div class="card">
                         <div class="card-header">Ajouter un jeu</div>
                         <div class="card-body">
@@ -60,9 +60,14 @@
                                 <label for="description">Description : </label>
                                 <textarea class="form-control" id="description" name="description"></textarea>
                             </div>
+
+                            <div class="form-group">
+                                <label for="image">Image du jeu : </label>
+                                <input type="file" name="image" class="form-control-file" id="image" placeholder="Choisir un fichier">
+                            </div>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Ajouter</button>
+                            <button type="submit" class="btn btn-raised btn-primary">Ajouter</button>
                         </div>
                     </div>
                 </form>

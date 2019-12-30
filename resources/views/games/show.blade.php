@@ -88,7 +88,7 @@
                                 </div>
                                 <input type="number" name="game_id" value="{{ $game['id'] }}" hidden>
 
-                                <button class="btn btn-primary" type="submit">Poster</button>
+                                <button class="btn btn-raised btn-primary" type="submit">Poster</button>
                             </form>
                         </div>
                     </div>

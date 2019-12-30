@@ -18,7 +18,14 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    {{ $game['description'] }}
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="{{ asset('storage/images/games/' . $game->id . '/' . $game->image) }}" class="img-thumbnail">
+                                        </div>
+                                        <div class="col">
+                                            {{ $game['description'] }}
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer">
                                     Ce jeu est sorti en {{ \Carbon\Carbon::parse($game->release_date)->format('Y') }}
@@ -65,7 +72,9 @@
                                 <div class="form-group">
                                     <input name="tag" type="text" placeholder="Tag" class="form-control">
                                 </div>
-                                <button type="submit" class="btn btn-light">Ajouter</button>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-raised btn-dark">Ajouter</button>
+                                </div>
                             </form>
                         </div>
                     </div>

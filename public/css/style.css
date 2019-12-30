@@ -31,3 +31,7 @@ textarea#description {
 .index-tag {
  margin-bottom: 5px;
 }
+
+footer > * {
+    color: #fff;
+}
